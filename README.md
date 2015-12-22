@@ -1,2 +1,2 @@
 # JValidator
-A simple html form validator using Jquery.
+A *simple* html form validator using Jquery.

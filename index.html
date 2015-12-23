@@ -18,10 +18,13 @@
         <legend><h3>Form exemple:</h3></legend>
 
         <label for="txt">Normal text input</label></br>
-        <input type="text" name="txt" value="" class="form-element"></br>
+        <input type="text" name="txt" value="" class="form-element" pa></br>
 
         <label for="numeric">Numeric input</label></br>
-        <input type="text" name="numeric" value="" class="form-element"></br>
+        <input type="text" name="numeric" value="" class="form-element" pattern="[0-9]" required></br>
+
+        <label for="numeric">Just Letters input</label></br>
+        <input type="text" name="numeric" value="" class="form-element" pattern="^[0-9]" required></br>
 
         <label for="selection">A requerid select</label></br>
         <select class="form-element" name="selection">
@@ -36,10 +39,10 @@
       <hr>
       <legend>
         <h3>How it works?</h3>
-        <p></p>
       </legend>
+      <p></p>
     </div>
   </section>
-
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 </body>
 </html>

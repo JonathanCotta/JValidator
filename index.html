@@ -1,48 +1,56 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <title>JValidator</title>
-  <link rel="stylesheet" href="css/style.css">
+    <meta charset="utf-8">
+    <title>JValidator</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/jvalidator.js"></script>
+    <script src="js/valida.js"></script>
 </head>
 <body>
-  <header>
-    <div class="top-background"></div>
-  </header>
-  <section class="container">
-    <div class="form-container">
-      <legend><h1> JValidator</h1></legend>
-      <p>A simple pluguin made in JQuery focused on easy implementation and customization.</p>
-      <hr>
-      <form class="" action="index.html" method="post">
-        <legend><h3>Form exemple:</h3></legend>
+    <header>
+        <div class="top-background"></div>
+    </header>
+    <section class="container">
+        <div class="form-container">
+            <legend><h1> JValidator</h1></legend>
+            <p>A simple pluguin made in JQuery focused on easy implementation and customization.</p>
+            <hr>
+            <form name="FormExample" class="form" action="index.html" method="post">
+                <legend><h3>Form exemple:</h3></legend>
 
-        <label for="txt">Normal text input</label></br>
-        <input type="text" name="txt" value="" class="form-element" pa></br>
+                <label for="txt">Normal text input</label></br>
+                <input type="text" name="txt" value="" class="form-element"></br>
 
-        <label for="numeric">Numeric input</label></br>
-        <input type="text" name="numeric" value="" class="form-element" pattern="[0-9]" required></br>
+                <label for="numeric">Numeric input</label></br>
+                <input type="text" name="numeric" value="" class="form-element" pattern="[0-9]" required></br>
 
-        <label for="numeric">Just Letters input</label></br>
-        <input type="text" name="numeric" value="" class="form-element" pattern="^[0-9]" required></br>
+                <label for="numeric">Just Letters input</label></br>
+                <input type="text" name="letters" value="" class="form-element" pattern="^[0-9]" required></br>
 
-        <label for="selection">A requerid select</label></br>
-        <select class="form-element" name="selection">
-          <option value="" selected disabled hidden></option>
-          <option value="1"> Option 1 </option>
-          <option value="2"> Option 2 </option>
-          <option value="3"> Option 3 </option>
-          <option value="4"> Option 4 </option>
-        </select>
+                <label for="selection">A requerid select</label></br>
+                <select class="form-element" name="selection">
+                    <option value="" selected disabled hidden></option>
+                    <option value="1"> Option 1 </option>
+                    <option value="2"> Option 2 </option>
+                    <option value="3"> Option 3 </option>
+                    <option value="4"> Option 4 </option>
+                </select>
 
-      </form>
-      <hr>
-      <legend>
-        <h3>How it works?</h3>
-      </legend>
-      <p></p>
-    </div>
-  </section>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+            </form>
+            <hr>
+            <legend>
+                <h3>How it works?</h3>
+            </legend>
+            <p></p>
+        </div>
+    </section>
+
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $(".form").formValidation();
+    });
+    </script>
 </body>
 </html>

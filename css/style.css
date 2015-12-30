@@ -48,12 +48,7 @@ hr{
 }
 
 /* validation classes*/
-.valid{
-    border: 2px inset;
-    box-shadow: initial;
-}
-
 .invalid{
-    border: solid 1px rgba(#e21414,.72);
-    box-shadow: rgba(#e21414,.72) 0px 0px 10px;
+    border: solid 1px red;
+    box-shadow: red 0px 0px 7px;
 }

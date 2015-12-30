@@ -7,10 +7,10 @@
                 if(!this.checkValidity()){ invalid(this); }
             });
         });
-        // actions if inputs is invalid
+        // actions if input is invalid
         var invalid = function(el){
             $(el).css({"border":"solid 0.08em red","box-shadow":"red 0px 0px 10px"});
-            $(el).after("  " + el.validationMessage);
+            $(el).after(" "+el.validationMessage);
         };
     }
 })(jQuery);

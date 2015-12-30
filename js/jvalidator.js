@@ -1,9 +1,11 @@
 (function($) {
     $.fn.formValidation = function(){
-        var input =[];    
         this.children(":input").each(function(){
-            input.push(this.name);
+            $("input[name="+this.name+"]").on("blur",function(){
+                if(!this.checkValidity()){
+                    alert(this.validationMessage);
+                }
+            });
         });
-        alert(input);
     }
 })(jQuery);

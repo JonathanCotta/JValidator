@@ -12,13 +12,12 @@
                 }
             });
         });
-        // actions if input is invalid
-        var invalid = function(el){
+        // what the you want to do in case of invalid input, feel free to add your code here.
+        var invalid = function(el , val){
             $(el).addClass('invalid');
-            $(el).after(" "+el.validationMessage);
         };
-        // actions if input is valid
-        var valid = function(el){
+        // what the you want to do in case of valid input, feel free to add your code here.
+        var valid = function(el , val){
             $(el).removeClass('invalid');
         }
     }

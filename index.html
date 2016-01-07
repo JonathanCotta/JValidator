@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <title>JValidator</title>
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/jquery-1.11.3.min.js"></script>
-    <script src="js/jvalidator.js"></script>    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="js/jvalidator.js"></script>
 </head>
 <body>
     <header>
@@ -13,43 +13,72 @@
     </header>
     <section class="container">
         <div class="form-container">
-            <legend><h1> JValidator</h1></legend>
+            <legend>
+                <h1> JValidator</h1>
+            </legend>
             <p>A simple pluguin made in JQuery focused on easy implementation and customization.</p>
-            <hr>
-            <form name="FormExample" class="form" action="index.html" method="post">
-                <legend><h3>Form exemple:</h3></legend>
-
-                <label for="txt">Normal text input</label></br>
-                <input type="text" name="txt" value="" class="form-element" required=""></br>
-
-                <label for="numeric">Numeric input</label></br>
-                <input type="text" name="numeric" value="" class="form-element" pattern="[0-9]" required></br>
-
-                <label for="numeric">Just Letters input</label></br>
-                <input type="text" name="letters" value="" class="form-element" pattern="[^0-9]" required></br>
-
-                <label for="selection">A requerid select</label></br>
-                <select class="form-element" name="selection" required>
-                    <option value="" selected disabled hidden></option>
-                    <option value="1"> Option 1 </option>
-                    <option value="2"> Option 2 </option>
-                    <option value="3"> Option 3 </option>
-                    <option value="4"> Option 4 </option>
-                </select>
-
-            </form>
             <hr>
             <legend>
                 <h3>How it works?</h3>
             </legend>
-            <p></p>
-        </div>
-    </section>
+            <p>
+                Just call the <i>jvalidator.js</i> script in your html file and beware of the call order of the scripts, always the jQuery before.
+                So you can easily use it in the html file or in a external js script, calling the two methods <i>formValidation</i> and <i>inputsValidation</i>.
+                <br>
+                <h4>Explaning the methods:</h4>
+                <ul>
+                    <li>
+                        <b>formValidation - </b>
+                        Will check all the inputs in a selected (by name,id and etc.. you choose) form and focus the first invalid field.</br>
+                        <b>sintax:</b> $(form).formValidation();
+                    </li>
+                    <li>
+                        <b>inputsValidation - </b>
+                        That method will attach the event "on blur" in all inputs inside a selected form, so  validation will be executed when the focus get out of field.</br>
+                        <b>sintax:</b> $(form).inputsValidation();
+                    </li>
+                </ul>
+                <h4>Tooltips use explanation</h4>
+                <p>To show a feedback to user about what is wrong or missing in the field is showed a tooltip, but you can change private methods inside plugin to work in another way.
+                    You need follow some rules to it work, after the input put a span with the class "tooltip" and just  it. </p>
+                    <b>sintax:</b></br>
+                    <div class="sintax">
+                        &lt;input type="text" name="txt" value="" class="form-element" required&gt;</br>
+                        &lt;span class="tooltip"&gt;&lt;/span&gt;</br>
+                    </div>
+                </p>
+                <hr>
+                <form name="FormExample" class="form" action="index.html" method="post">
+                    <legend><h3>Form exemple:</h3></legend>
 
-    <script type="text/javascript">
-    $(document).ready(function() {
-        $(".form").formValidation();
-    });
-    </script>
-</body>
-</html>
+                    <label for="txt">Normal text input</label></br>
+                    <input type="text" name="txt" value="" class="form-element" required="">
+                    <span class="tooltip"></span></br>
+
+                    <label for="numeric">Numeric input</label></br>
+                    <input type="text" name="numeric" value="" class="form-element" pattern="[0-9]" required>
+                    <span class="tooltip"></span></br>
+
+                    <label for="numeric">Just Letters input</label></br>
+                    <input type="text" name="letters" value="" class="form-element" pattern="[^0-9]" required>
+                    <span class="tooltip"></span></br>
+
+                    <label for="selection">A requerid select</label></br>
+                    <select class="form-element" name="selection" required>
+                        <option value="" selected disabled hidden></option>
+                        <option value="1"> Option 1 </option>
+                        <option value="2"> Option 2 </option>
+                        <option value="3"> Option 3 </option>
+                    </select>
+                    <span class="tooltip"></span>
+                </form>
+            </div>
+        </section>
+
+        <script type="text/javascript">
+        $(document).ready(function() {
+            $(".form").inputsValidation();
+        });
+        </script>
+    </body>
+    </html>
